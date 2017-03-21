@@ -1,0 +1,27 @@
+{
+  "name": "parsex",
+  "version": "1.0.0",
+  "description": "Parse arbitrary texts with concateneted regular expressions and export data in JSON format",
+  "main": "src/server/server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniogiordano/parsex.git"
+  },
+  "keywords": [
+    "parser",
+    "regex",
+    "json",
+    "recursive"
+  ],
+  "author": "Antonio Giordano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antoniogiordano/parsex/issues"
+  },
+  "homepage": "https://github.com/antoniogiordano/parsex#readme"
+}
