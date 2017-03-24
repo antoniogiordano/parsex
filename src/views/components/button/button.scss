@@ -1,0 +1,52 @@
+@import "../../global.scss";
+
+@-webkit-keyframes rotating {
+    from{
+        @include browserify(transform, rotate(0deg));
+    }
+    to{
+        @include browserify(transform, rotate(360deg));
+    }
+}
+
+.buttonRoot {
+    border: none;
+    padding: 12px 16px;
+    background: #39c;
+    color: white;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    top: 0px;
+    transition: all ease-in-out .2s;
+    &:hover {
+        background: #70b8db;
+        position: relative;
+        top: 3px;
+    }
+    &:active {
+        background: #99cce6;
+        position: relative;
+        top: 3px;
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background: $buttonGrey;
+        top: 0;
+        @include browserify(box-shadow, none);
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    i.loading {
+        @include browserify(animation, rotating 2s linear infinite);
+    }
+
+    * {
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,81 @@
+@import '../../../global.scss';
+
+.root {
+  width: 100%;
+  @include display-flex();
+  @include browserify(flex-direction, column);
+  label {
+    font-size: 20px;
+    font-weight: 400;
+    color: $darkBrandColor;
+    margin-bottom: 5px;
+  }
+  summary {
+    font-size: 12px;
+    font-style: italic;
+    color: lighten($darkBrandColor, 30%);
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .inputContainer {
+    position: relative;
+    width: 100%;
+    div.textarea {
+      border: none;
+      border-bottom: 2px solid $buttonGrey;
+      color: $brandColor;
+      font-weight: 400;
+      font-size: 16px;
+      padding: 10px 0;
+      width: 100%;
+      outline: none;
+      background: white;
+      min-height: 30px;
+      padding-right: 45px;
+      line-height: 1.4em;
+      &:focus {
+        border-bottom: 2px solid $brandColor;
+      }
+
+      &.error {
+        color: $errorColor;
+        border-bottom: 2px solid $errorColor;
+      }
+    }
+    output {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      bottom: 3px;
+      right: 0;
+      @include display-flex();
+      @include browserify(align-items, center);
+      @include browserify(justify-content, center);
+      &.success {
+        color: $successColor;
+      }
+      &.neutral {
+        color: $alertColor;
+      }
+      &.error {
+        color: $errorColor;
+      }
+    }
+  }
+  dialog {
+    @include display-flex();
+    @include browserify(align-items, center);
+    @include browserify(justify-content, flex-start);
+    padding: 0;
+    position: relative;
+    border: none;
+    color: $errorColor;
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../global.scss';
+
+.root {
+  @include display-flex();
+  @include browserify(flex-direction, column);
+  @include browserify(justify-content, space-around);
+  @include browserify(align-items, center);
+  width: 100%;
+  min-height: 120px;
+  outline: 3px dashed #999999;
+  padding: 20px;
+
+  &.light {
+    background: transparentize(white, 0.6);
+  }
+  &.dark {
+    background: transparentize(white, 0.94);
+  }
+
+  input {
+    display: none;
+  }
+
+  .progressContainer {
+    width: 90%;
+
+    p {
+      margin-bottom: 5px;
+    }
+  }
+
+  & > * {
+    margin: 10px 0;
+  }
+}

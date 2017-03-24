@@ -1,0 +1,95 @@
+@import '../../../global.scss';
+
+@-webkit-keyframes rotating {
+  from{
+    @include browserify(transform, rotate(0deg));
+  }
+  to{
+    @include browserify(transform, rotate(360deg));
+  }
+}
+
+.inputTextRoot {
+  width: 100%;
+  @include display-flex();
+  @include browserify(flex-direction, column);
+  label {
+    font-size: 20px;
+    font-weight: 400;
+    color: $darkBrandColor;
+    margin-bottom: 5px;
+  }
+  .inputContainer {
+    position: relative;
+    width: 100%;
+
+    label {
+      @include display-flex();
+      @include browserify(align-items, center);
+      @include browserify(justify-content, flex-start);
+      width: 100%;
+      background: transparent;
+      cursor: pointer;
+
+      summary {
+        font-size: 12px;
+        color: $smallItalic;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 1.1em;
+        margin-left: 10px;
+      }
+      input {
+        border: none;
+        color: $brandColor;
+        height: 20px;
+        outline: none;
+        background: transparent;
+      }
+      span {
+        color: $brandColor;
+        font-weight: 400;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+    }
+    output {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include display-flex();
+      @include browserify(align-items, center);
+      @include browserify(justify-content, center);
+      &.success {
+        color: $successColor;
+      }
+      &.neutral {
+        color: $alertColor;
+      }
+      &.error {
+        color: $errorColor;
+      }
+      &.loading {
+        color: $alertColor;
+        @include browserify(animation, rotating 2s linear infinite);
+      }
+    }
+  }
+  dialog {
+    @include display-flex();
+    @include browserify(align-items, center);
+    @include browserify(justify-content, flex-start);
+    padding: 0;
+    position: relative;
+    border: none;
+    color: $errorColor;
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    background: transparent;
+  }
+}

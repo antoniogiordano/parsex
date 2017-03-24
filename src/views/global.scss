@@ -1,0 +1,58 @@
+@mixin display-flex() {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin browserify($prop, $value) {
+    #{'-webkit-' + $prop}: $value;
+    #{'-moz-' + $prop}: $value;
+    #{'-ms-' + $prop}: $value;
+    #{'-o-' + $prop}: $value;
+    #{$prop}: $value;
+}
+
+@mixin rotate($deg) {
+    -ms-transform: rotate($deg); /* IE 9 */
+    -webkit-transform: rotate($deg); /* Chrome, Safari, Opera */
+    transform: rotate($deg);
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+@mixin unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+$brandColor: #379ACE;
+$darkBrandColor: #2B2A3B;
+$buttonGrey: #ccc;
+$successColor: #53A182;
+$alertColor: #EBCB1A;
+$errorColor: #EA656C;
+$smallItalic: #aaa;
+
+$mobileWidth: 768px;

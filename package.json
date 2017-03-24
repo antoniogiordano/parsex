@@ -3,10 +3,42 @@
   "version": "1.0.0",
   "description": "Parse arbitrary texts with concateneted regular expressions and export data in JSON format",
   "main": "src/server/server.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "auto-versiony": "^1.0.1",
+    "ejs": "^2.5.6",
+    "hapi": "^16.1.0",
+    "inert": "^4.1.0",
+    "joi": "^10.3.0",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "axios": "^0.15.3",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.17.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-compress": "^1.4.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-develop": "^0.4.0",
+    "node-sass": "^3.8.0",
+    "parallelshell": "^2.0.0",
+    "postcss-loader": "^1.3.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-progressbar": "^1.4.6",
+    "sass-loader": "^6.0.3",
+    "standard": "^9.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
   "scripts": {
-    "test": "standard"
+    "test": "standard --fix",
+    "dev": "parallelshell 'babel src --out-dir lib -w' 'webpack -w' 'grunt'"
   },
   "repository": {
     "type": "git",
@@ -23,5 +55,11 @@
   "bugs": {
     "url": "https://github.com/antoniogiordano/parsex/issues"
   },
-  "homepage": "https://github.com/antoniogiordano/parsex#readme"
+  "homepage": "https://github.com/antoniogiordano/parsex#readme",
+  "standard": {
+    "ignore": [
+      "lib",
+      "public"
+    ]
+  }
 }

@@ -38,3 +38,6 @@ jspm_packages
 
 .idea
 lib
+public/js/bundles
+
+src/server/bundles-version\.json

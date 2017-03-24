@@ -1,0 +1,73 @@
+@import '../../../global.scss';
+
+.root {
+  width: 100%;
+  @include display-flex();
+  @include browserify(flex-direction, column);
+  label {
+    font-size: 20px;
+    font-weight: 400;
+    color: $darkBrandColor;
+    margin-bottom: 5px;
+  }
+  summary {
+    font-size: 12px;
+    font-style: italic;
+    color: lighten($darkBrandColor, 30%);
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .inputContainer {
+    position: relative;
+    width: 100%;
+    input {
+      border: 1px solid #ccc;
+      color: $brandColor;
+      font-weight: 400;
+      font-size: 16px;
+      padding: 0 10px;
+      width: 100%;
+      height: 40px;
+      outline: none;
+      background: white;
+      &:focus {
+        @include browserify(box-shadow, $brandColor 0px 0px 10px);
+      }
+    }
+    output {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #fff;
+      @include display-flex();
+      @include browserify(align-items, center);
+      @include browserify(justify-content, center);
+      &.success {
+        background: $successColor;
+      }
+      &.neutral {
+        background: $alertColor;
+      }
+      &.error {
+        background: $errorColor;
+      }
+    }
+  }
+  dialog {
+    position: relative;
+    display: block;
+    border: 1px solid $errorColor;
+    color: $errorColor;
+    width: 100%;
+    top: -1px;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 10px;
+  }
+}
